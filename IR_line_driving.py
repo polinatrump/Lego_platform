@@ -1,6 +1,6 @@
 from library_of_functions import RobotControl
-
 RC = RobotControl()
+
 while True:
     IR_values = RC.data_reading_IR() # ученик  запрашивает функцию для чтения данных с ИК
     threshold = 170 # пороговое начение, сигнализирующее о том, что линия под ИК датчиком
@@ -18,4 +18,4 @@ while True:
     elif s6 > threshold or s7 > threshold or s8 > threshold:
         RC.IR_wheel_movement('LEFT')
     else:
-        RC.make_last_wheel_movement()
+        RC.make_IR_last_wheel_movement()
