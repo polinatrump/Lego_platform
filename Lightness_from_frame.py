@@ -22,18 +22,14 @@ while True:
         prev = time.time()
 
         ret, frame = cap.read()
-        frame = imutils.rotate(frame, angle=180) # перевернуть изображение
+        frame = imutils.rotate(frame, angle=180) 
         lighting = analysis_lighting(frame, 80)
         print(lighting)
         cv2.imshow('frame_Lower', frame)
 
         ret2, frame2 = cap2.read()
-        frame2 = imutils.rotate(frame2, angle=270) # перевернуть изображение
+        frame2 = imutils.rotate(frame2, angle=270) 
         cv2.imshow('frame_Upper', frame2)
 
         if cv2.waitKey(1) == ord('q'):
             break
-
-    # When everything done, release the capture
-# cap.release()
-# cv2.destroyAllWindows()
